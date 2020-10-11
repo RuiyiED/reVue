@@ -1,0 +1,9 @@
+var => old school
+let => fashion
+
+const => 常數
+
+hoisting
+
+立即函式IIFE: 前如果加分號 是因為程式有時是模組組裝,如果前面沒有加分號,IIFE會立即執行
+template語法 把資料render在畫面上
