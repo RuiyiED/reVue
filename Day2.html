@@ -7,18 +7,19 @@
 </head>
 <body>
   <div id="app">
-    {{ msg }}
+    <p v-once>{{ msg }}</p>
+    <p>{{ msg }}</p>
   </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script>
   <script>
     let data = {
       msg: 'hello Vue',
     }
-
+    // Object.freeze(data);
     let vm = new Vue({
       el:'#app',
       data,
     })
-  </script>
+  </script> 
 </body>
 </html>
