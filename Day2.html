@@ -9,11 +9,13 @@
   <div id="app">
     <p v-once>{{ msg }}</p>
     <p>{{ msg }}</p>
+    <p v-html="html"></p>
   </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script>
   <script>
     let data = {
       msg: 'hello Vue',
+      html:'<span style="color:red"> this is red </span>'
     }
     // Object.freeze(data);
     let vm = new Vue({
