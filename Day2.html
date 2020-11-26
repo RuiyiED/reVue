@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <div id="app">
     <p v-once>{{ msg }}</p>
     <p>{{ msg }}</p>
     <p v-html="html"></p>
   </div>
+
+  <script type="text/x-template" id="page-template">
+    <span style="color:red">{{ msg }}</span>
+  </script>
+
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script>
   <script>
+    window.user = 'Dora'
     let data = {
       msg: 'hello Vue',
-      html:'<span style="color:red"> this is red </span>'
+      html: '<span style="color:red"> this is red </span>'
     }
     // Object.freeze(data);
     let vm = new Vue({
-      el:'#app',
+      // el: '#app',
       data,
-    })
-  </script> 
+      // template: `<span style="color:red">{{ msg }}</span>`
+      template: '#page-template'
+    });
+
+    // instance & template
+    // 1.html template + el option
+    // 2.el option + template option
+    // 3.template option + vm.$mount
+    vm.$mount('#app');
+  </script>
 </body>
+
 </html>
